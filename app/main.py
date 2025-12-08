@@ -82,7 +82,7 @@ command_list = [
     "/gif - Отримати гіфку котика з текстом, якщо він є",
     "/breed - Отримати котика певної породи",
     "/today - Отримати який ти котик сьогодні",
-    "/селисьзаїбав - нагадати @V_Vladyslavv, щоб він поселився",
+    "/селисьзаїбав - нагадати @V_Vladyslavv та @Vlad888555 щоб вони поселилися",
     "/mrpenis - Отримаити стікер Mr penis",
     "/women - Отримати прекрасну гіфку",
 ]
@@ -408,10 +408,10 @@ async def getHund(message: types.Message):
 async def selys(message: types.Message):
     url = await fetch_image_url(CAT_API_SEARCH_URL)
     try:
-        text = "@V_Vladyslavv селись заїбав"
+        text = "@V_Vladyslavv, @Vlad888555 селіться заїбали"
         img_buffer = await addTextOnPhoto(url, text)
         await bot.send_message(
-            chat_id=message.chat.id, text="@V_Vladyslavv селись заїбав!"
+            chat_id=message.chat.id, text="@V_Vladyslavv, @Vlad888555 селіться, заїбали!"
         )
         await bot.send_photo(
             chat_id=message.chat.id,
@@ -419,7 +419,7 @@ async def selys(message: types.Message):
         )
     except Exception as e:
         print(e)
-        await message.reply("кота не буде, але @V_Vladyslavv селись заїбав")
+        await message.reply("кота не буде, але @V_Vladyslavv, @Vlad888555 селіться, заїбали")
 
 
 @dp.message(Command("women", prefix="/"))
